@@ -8,6 +8,7 @@ import {
 import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 
+import Button from "~/components/Button";
 import { Wrapper as PopperWrapper } from "~/components/Popper";
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
@@ -21,7 +22,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1, 2, 3]);
+            setSearchResult([]);
         }, 0);
     }, []);
 
@@ -68,7 +69,10 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx("actions")}></div>
+                <div className={cx("actions")}>
+                    <Button text>Upload</Button>
+                    <Button primary>Log in</Button>
+                </div>
             </div>
         </header>
     );

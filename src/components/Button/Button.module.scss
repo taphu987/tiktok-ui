@@ -1,0 +1,50 @@
+.wrapper {
+    border-radius: 4px;
+    min-width: 100px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-left: 16px;
+    padding: 9px 16px;
+    cursor: pointer;
+    background-color: var(--white);
+    border: 1px solid transparent;
+}
+
+/*============== Start: Button types ===============*/
+.primary {
+    // color: rgba(255, 255, 255, 1);
+    color: var(--white);
+    background-color: var(--primary);
+
+    &:hover {
+        background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.06),
+                rgba(0, 0, 0, 0.06)
+            ),
+            #fe2c55;
+    }
+}
+
+.outline {
+    font-size: 1.6rem;
+    color: var(--primary);
+    border-color: currentColor;
+
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+}
+/*============== End: Button types ===============*/
+
+/*============== Start: Button sizes ===============*/
+.small {
+    padding: 4px 10px;
+    min-width: 88px;
+}
+
+.large {
+    min-width: 148px;
+    padding: 14px 16px;
+}
+/*============== End: Button sizes ===============*/
