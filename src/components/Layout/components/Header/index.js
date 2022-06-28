@@ -35,6 +35,7 @@ function Header() {
                     </button>
                 </div>
                 <div className={cx("actions")}></div>
+                <div></div>
             </div>
         </header>
     );
