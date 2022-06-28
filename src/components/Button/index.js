@@ -9,10 +9,13 @@ function Button({
     href,
     primary = false,
     outline = false,
-    text = true,
+    text = false,
+    rounded = false,
+    disabled = false,
     small = false,
     large = false,
     children,
+    className,
     onClick,
     ...passProps
 }) {
@@ -22,6 +25,14 @@ function Button({
         ...passProps,
     };
 
+    // Remove Events Listener when the button is disabled
+    if (disabled) {
+        Object.keys(props).forEach((key) => {
+            if (key.startsWith("on") && typeof props[key] === "function") {
+                delete props[key];
+            }
+        });
+    }
     if (to) {
         props.to = to;
         Component = Link;
@@ -30,9 +41,12 @@ function Button({
         Component = "a";
     }
     const classes = cx("wrapper", {
+        [className]: className,
         primary,
         outline,
         text,
+        rounded,
+        disabled,
         small,
         large,
     });
@@ -43,5 +57,4 @@ function Button({
         </Component>
     );
 }
-
 export default Button;
