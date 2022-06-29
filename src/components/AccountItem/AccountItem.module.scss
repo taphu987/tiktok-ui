@@ -2,9 +2,9 @@
     display: flex;
     align-items: center;
     padding: 9px 16px;
+    cursor: pointer;
 
     &:hover {
-        cursor: pointer;
         background-color: rgba(22, 24, 35, 0.03);
     }
 }
@@ -18,8 +18,8 @@
 }
 
 .info {
-    margin-left: 12px;
     flex: 1;
+    margin-left: 12px;
 }
 
 .username {
@@ -29,6 +29,12 @@
     white-space: nowrap;
 }
 
+.check-icon {
+    color: rgb(32, 213, 236);
+    font-size: 1.4rem;
+    margin-left: 6px;
+}
+
 .name {
     line-height: 20px;
     color: rgba(22, 24, 35, 0.5);
@@ -36,10 +42,4 @@
     font-weight: 400;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-.check-icon {
-    color: rgb(32, 213, 236);
-    font-size: 1.4rem;
-    margin-left: 6px;
 }

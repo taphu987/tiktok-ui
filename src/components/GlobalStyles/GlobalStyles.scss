@@ -7,6 +7,8 @@
     --white: white;
     --text-color: #333;
 
+    --font-family: "ProximaNova", sans-serif;
+
     // Default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
@@ -23,11 +25,12 @@ html {
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     color: var(--text-color);
+    overflow-y: overlay;
 }
 
 button,
