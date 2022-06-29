@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+    faArrowUpFromBracket,
     faCircleXmark,
     faMagnifyingGlass,
     faSpinner,
@@ -70,7 +71,14 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx("actions")}>
-                    <Button text>Upload</Button>
+                    <Button
+                        text
+                        leftIcon={
+                            <FontAwesomeIcon icon={faArrowUpFromBracket} />
+                        }
+                    >
+                        Upload
+                    </Button>
                     <Button primary>Log in</Button>
                 </div>
             </div>
