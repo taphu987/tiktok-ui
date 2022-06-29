@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 import { Wrapper as PopperWrapper } from "~/components/Popper";
-import MenuItems from "./MenuItems";
+import MenuItem from "./MenuItem";
 
 import styles from "./Menu.module.scss";
 
@@ -10,19 +10,19 @@ const cx = classNames.bind(styles);
 
 function Menu({ children, items = [] }) {
     const renderItems = () => {
-        return items.map((item, index) => (
-            <MenuItems key={index} data={item} />
-        ));
+        return items.map((item, index) => <MenuItem key={index} data={item} />);
     };
 
     return (
         <Tippy
             placement="bottom-end"
             interactive
+            delay={[0, 700]}
             render={(attrs) => (
-                <div className={cx("content")} tabIndex="-1" {...attrs}>
-                    <PopperWrapper>
-                        <h2>{renderItems()}</h2>
+                <div className={cx("menu-list")} tabIndex="-1" {...attrs}>
+                    <PopperWrapper className={cx("menu-popper")}>
+                        {renderItems()}
+                        {/* <div>{renderItems()}</div> */}
                     </PopperWrapper>
                 </div>
             )}

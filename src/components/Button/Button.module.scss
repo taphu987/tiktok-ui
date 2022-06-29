@@ -3,10 +3,10 @@
     align-items: center;
     justify-content: center;
     min-width: 100px;
-    padding: 9px 16px;
+    padding: 8px 16px;
     border-radius: 4px;
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 600;
     font-family: var(--font-family);
     cursor: pointer;
     background-color: var(--white);
@@ -29,7 +29,11 @@
 }
 
 .icon {
-    font-size: 1.4rem;
+    display: inline-block;
+    text-align: center;
+    width: 20px;
+    // height: 20px;
+    font-size: 1.6rem;
 }
 
 /*============== Start: Button types ===============*/
@@ -51,6 +55,7 @@
 
 .primary {
     // color: rgba(255, 255, 255, 1);
+    font-size: 1.6rem;
     color: var(--white);
     background-color: var(--primary);
     border-color: var(--primary);
@@ -78,6 +83,7 @@
 }
 
 .text {
+    font-size: 1.6rem;
     &:hover {
         text-decoration: underline;
     }
