@@ -35,6 +35,7 @@ function Button({
             }
         });
     }
+
     if (to) {
         props.to = to;
         Component = Link;
@@ -42,6 +43,7 @@ function Button({
         props.href = href;
         Component = "a";
     }
+
     const classes = cx("wrapper", {
         [className]: className,
         primary,

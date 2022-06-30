@@ -109,10 +109,36 @@
     color: rgba(22, 24, 35, 0.5);
 }
 
+.actions {
+    display: flex;
+    align-items: center;
+}
+
 .more-btn {
     font-size: 2rem;
     margin-left: 10px;
     padding: 4px 16px;
     background-color: transparent;
+    cursor: pointer;
+}
+
+.action-btn {
+    background-color: transparent;
+    font-size: 2.6rem;
+    color: #161823;
+    padding: 8px;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.user-avatar {
+    margin-left: 20px;
+    background: center no-repeat;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
     cursor: pointer;
 }
