@@ -2,15 +2,20 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faArrowUpFromBracket,
+    faCircleDollarToSlot,
     faCircleQuestion,
     faCircleXmark,
+    faCloudUpload,
     faEllipsisVertical,
+    faGear,
     faGlobe,
     faKeyboard,
     faMagnifyingGlass,
+    faSignOutAlt,
     faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
-import Tippy from "@tippyjs/react/headless";
+import Tippy from "@tippyjs/react";
+import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css"; // optional
 
 import Button from "~/components/Button";
@@ -27,26 +32,87 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faGlobe} />,
         title: "English",
+        children: {
+            title: "Language",
+            data: [
+                {
+                    type: "language",
+                    code: "en",
+                    title: "English",
+                },
+                {
+                    type: "language",
+                    code: "vi",
+                    title: "Tiếng Việt",
+                },
+            ],
+        },
+        fontWeight: true,
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
         title: "Feedback & Help",
         to: "/feedback",
+        fontWeight: true,
     },
     {
         icon: <FontAwesomeIcon icon={faKeyboard} />,
         title: "Keyboard shortcuts",
+        fontWeight: true,
     },
 ];
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
 
+    const currentUser = true;
+
     useEffect(() => {
         setTimeout(() => {
             setSearchResult([]);
         }, 0);
     }, []);
+
+    // Handle logic
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case "language":
+                // Handle change language
+                break;
+
+            default: {
+            }
+        }
+    };
+
+    const userMenu = [
+        {
+            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+            title: "View profile",
+            to: "/@nhamthao2404",
+            fontWeight: true,
+        },
+        {
+            icon: <FontAwesomeIcon icon={faCircleDollarToSlot} />,
+            title: "Get coins",
+            to: "/coins",
+            fontWeight: true,
+        },
+        {
+            icon: <FontAwesomeIcon icon={faGear} />,
+            title: "Settings",
+            to: "/settings",
+            fontWeight: true,
+        },
+        ...MENU_ITEMS,
+        {
+            icon: <FontAwesomeIcon icon={faSignOutAlt} />,
+            title: "Log out",
+            to: "/",
+            fontWeight: true,
+            border: true,
+        },
+    ];
 
     return (
         <header className={cx("wrapper")}>
@@ -55,7 +121,7 @@ function Header() {
                     <img src={images.logo} alt="Tiktok" />
                 </div>
                 <div>
-                    <Tippy
+                    <HeadlessTippy
                         interactive
                         visible={searchResult.length > 0}
                         render={(attrs) => (
@@ -93,24 +159,53 @@ function Header() {
                                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </button>
                         </div>
-                    </Tippy>
+                    </HeadlessTippy>
                 </div>
 
                 <div className={cx("actions")}>
-                    <Button
-                        text
-                        leftIcon={
-                            <FontAwesomeIcon icon={faArrowUpFromBracket} />
-                        }
+                    {currentUser ? (
+                        <span>
+                            <Tippy
+                                interactive
+                                delay={[0, 200]}
+                                content="Upload video"
+                                placement="bottom"
+                            >
+                                <button className={cx("action-btn")}>
+                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                </button>
+                            </Tippy>
+                        </span>
+                    ) : (
+                        <>
+                            <Button
+                                text
+                                leftIcon={
+                                    <FontAwesomeIcon
+                                        icon={faArrowUpFromBracket}
+                                    />
+                                }
+                            >
+                                Upload
+                            </Button>
+                            <Button primary>Log in</Button>
+                        </>
+                    )}
+                    <Menu
+                        items={currentUser ? userMenu : MENU_ITEMS}
+                        onChange={handleMenuChange}
                     >
-                        Upload
-                    </Button>
-                    <Button primary>Log in</Button>
-
-                    <Menu items={MENU_ITEMS}>
-                        <button className={cx("more-btn")}>
-                            <FontAwesomeIcon icon={faEllipsisVertical} />
-                        </button>
+                        {currentUser ? (
+                            <img
+                                className={cx("user-avatar")}
+                                alt="Nhâm Phương Thảo"
+                                src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/31a2e92512606aa596df657166e5e483~c5_300x300.webp?x-expires=1656781200&x-signature=05tmcdElV%2Bg6%2FZpnZNDPv6hlxgQ%3D"
+                            />
+                        ) : (
+                            <button className={cx("more-btn")}>
+                                <FontAwesomeIcon icon={faEllipsisVertical} />
+                            </button>
+                        )}
                     </Menu>
                 </div>
             </div>

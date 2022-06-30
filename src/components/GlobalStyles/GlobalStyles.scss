@@ -1,13 +1,13 @@
 @import "normalize.css";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,400&display=swap");
-
+// @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,400&display=swap");
+@import url("http://fonts.cdnfonts.com/css/proxima-nova-2?styles=44818,44819,44822,44823,44817,44816,44820,44821,44812,44813,44814,44815,44810,44811");
 :root {
     --primary: #f52c55;
     --black: black;
     --white: white;
-    --text-color: #333;
+    --text-color: #161823;
 
-    --font-family: "ProximaNova", sans-serif;
+    --font-family: "Proxima Nova", sans-serif;
 
     // Default layout
     --default-layout-header-height: 60px;
@@ -44,4 +44,29 @@ input,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+// Custom tippy tooltips
+body {
+    .tippy-box {
+        background-color: rgba(84, 84, 84, 0.92);
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 2.2rem;
+        border-radius: 8px;
+        // padding: 3px;
+    }
+
+    .tippy-arrow {
+        fone-size: 1.6rem;
+        color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-content {
+        padding: 8px;
+    }
+
+    .tippy-box[data-placement^="bottom"] > .tippy-arrow:before {
+        top: -7.9px;
+    }
 }
