@@ -6,15 +6,10 @@ import {
     faCircleDollarToSlot,
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faEllipsisVertical,
     faGear,
     faGlobe,
     faKeyboard,
-<<<<<<< HEAD
-=======
-    faMagnifyingGlass,
->>>>>>> a37f0446e9869448e150b1f30af34c8e0f886792
     faSignOutAlt,
     faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
@@ -93,11 +88,7 @@ function Header() {
 
     const userMenu = [
         {
-<<<<<<< HEAD
             icon: <FontAwesomeIcon icon={faAddressCard} />,
-=======
-            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
->>>>>>> a37f0446e9869448e150b1f30af34c8e0f886792
             title: "View profile",
             to: "/@nhamthao2404",
             fontWeight: true,
@@ -182,11 +173,7 @@ function Header() {
                                 placement="bottom"
                             >
                                 <button className={cx("action-btn")}>
-<<<<<<< HEAD
                                     <UploadIcon />
-=======
-                                    <FontAwesomeIcon icon={faCloudUpload} />
->>>>>>> a37f0446e9869448e150b1f30af34c8e0f886792
                                 </button>
                             </Tippy>
                         </span>
@@ -210,18 +197,11 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-<<<<<<< HEAD
                             <Image
                                 className={cx("user-avatar")}
                                 alt="Nhâm Phương Thảo"
                                 src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/31a2e92512606aa596df657166e5e483~c5_300x300.webp?x-expires=1656781200&x-signature=05tmcdElV%2Bg6%2FZpnZNDPv6hlxgQ%3D"
                                 fallback="https://35express.org/wp-content/uploads/2022/01/thao-tao-tau-duoc-so-sanh-la-vo-quoc-dan-cung-voi-tieu-hy-35express.jpg"
-=======
-                            <img
-                                className={cx("user-avatar")}
-                                alt="Nhâm Phương Thảo"
-                                src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/31a2e92512606aa596df657166e5e483~c5_300x300.webp?x-expires=1656781200&x-signature=05tmcdElV%2Bg6%2FZpnZNDPv6hlxgQ%3D"
->>>>>>> a37f0446e9869448e150b1f30af34c8e0f886792
                             />
                         ) : (
                             <button className={cx("more-btn")}>
