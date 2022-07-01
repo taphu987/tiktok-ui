@@ -24,7 +24,12 @@ import styles from "./Header.module.scss";
 import images from "~/assets/images";
 import AccountItem from "~/components/AccountItem";
 import Menu from "~/components/Popper/Menu";
-import { SearchIcon, UploadIcon } from "~/components/icons";
+import {
+    SearchIcon,
+    UploadIcon,
+    MessageIcon,
+    InboxIcon,
+} from "~/components/icons";
 import Image from "~/components/images";
 
 const cx = classNames.bind(styles);
@@ -165,18 +170,49 @@ function Header() {
 
                 <div className={cx("actions")}>
                     {currentUser ? (
-                        <span>
-                            <Tippy
-                                interactive
-                                delay={[0, 200]}
-                                content="Upload video"
-                                placement="bottom"
-                            >
-                                <button className={cx("action-btn")}>
-                                    <UploadIcon />
-                                </button>
-                            </Tippy>
-                        </span>
+                        <div className={cx("icon-header")}>
+                            <div>
+                                <Tippy
+                                    interactive
+                                    delay={[0, 100]}
+                                    content="Upload video"
+                                    placement="bottom"
+                                >
+                                    <button className={cx("action-btn")}>
+                                        <UploadIcon />
+                                    </button>
+                                </Tippy>
+                            </div>
+
+                            <div>
+                                <Tippy
+                                    interactive
+                                    delay={[0, 100]}
+                                    content="Message"
+                                    placement="bottom"
+                                >
+                                    <button className={cx("action-btn")}>
+                                        <MessageIcon
+                                            className={cx("icon-message")}
+                                        />
+                                    </button>
+                                </Tippy>
+                            </div>
+
+                            <div>
+                                <Tippy
+                                    interactive
+                                    delay={[0, 100]}
+                                    content="Inbox"
+                                    placement="bottom"
+                                >
+                                    <button className={cx("action-btn")}>
+                                        <InboxIcon />
+                                        <span className={cx("badge")}>12</span>
+                                    </button>
+                                </Tippy>
+                            </div>
+                        </div>
                     ) : (
                         <>
                             <Button
