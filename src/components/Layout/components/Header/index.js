@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+    faAddressCard,
     faArrowUpFromBracket,
     faCircleDollarToSlot,
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faEllipsisVertical,
     faGear,
     faGlobe,
     faKeyboard,
-    faMagnifyingGlass,
     faSignOutAlt,
     faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
@@ -25,6 +24,8 @@ import styles from "./Header.module.scss";
 import images from "~/assets/images";
 import AccountItem from "~/components/AccountItem";
 import Menu from "~/components/Popper/Menu";
+import { SearchIcon, UploadIcon } from "~/components/icons";
+import Image from "~/components/images";
 
 const cx = classNames.bind(styles);
 
@@ -87,7 +88,7 @@ function Header() {
 
     const userMenu = [
         {
-            icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+            icon: <FontAwesomeIcon icon={faAddressCard} />,
             title: "View profile",
             to: "/@nhamthao2404",
             fontWeight: true,
@@ -156,7 +157,7 @@ function Header() {
                                 icon={faSpinner}
                             />
                             <button className={cx("search-btn")}>
-                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                                <SearchIcon />
                             </button>
                         </div>
                     </HeadlessTippy>
@@ -172,7 +173,7 @@ function Header() {
                                 placement="bottom"
                             >
                                 <button className={cx("action-btn")}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                         </span>
@@ -196,10 +197,11 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx("user-avatar")}
                                 alt="Nhâm Phương Thảo"
                                 src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/31a2e92512606aa596df657166e5e483~c5_300x300.webp?x-expires=1656781200&x-signature=05tmcdElV%2Bg6%2FZpnZNDPv6hlxgQ%3D"
+                                fallback="https://35express.org/wp-content/uploads/2022/01/thao-tao-tau-duoc-so-sanh-la-vo-quoc-dan-cung-voi-tieu-hy-35express.jpg"
                             />
                         ) : (
                             <button className={cx("more-btn")}>
