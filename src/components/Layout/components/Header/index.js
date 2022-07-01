@@ -66,7 +66,7 @@ const MENU_ITEMS = [
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
 
-    const currentUser = true;
+    const currentUser = false;
 
     useEffect(() => {
         setTimeout(() => {
