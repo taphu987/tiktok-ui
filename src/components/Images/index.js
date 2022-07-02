@@ -3,6 +3,8 @@ import images from "~/assets/images";
 import styles from "./image.module.scss";
 import classNames from "classnames";
 
+console.log(images.noImage);
+
 const Image = forwardRef(
     (
         {

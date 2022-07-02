@@ -29,8 +29,8 @@ import {
     UploadIcon,
     MessageIcon,
     InboxIcon,
-} from "~/components/icons";
-import Image from "~/components/images";
+} from "~/components/Icons";
+import Image from "~/components/Images";
 
 const cx = classNames.bind(styles);
 
@@ -75,7 +75,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([]);
+            setSearchResult([1, 2, 3]);
         }, 0);
     }, []);
 
@@ -86,8 +86,7 @@ function Header() {
                 // Handle change language
                 break;
 
-            default: {
-            }
+            default:
         }
     };
 
