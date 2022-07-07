@@ -1,9 +1,9 @@
 import { useState, forwardRef } from "react";
 import images from "~/assets/images";
-import styles from "./image.module.scss";
+import styles from "~/components/Images/Images.module.scss";
 import classNames from "classnames";
 
-console.log(images.noImage);
+// console.log(images.noImage);
 
 const Image = forwardRef(
     (
